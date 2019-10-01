@@ -1,38 +1,55 @@
-import React from 'react';
+import React from "react";
 
 class TodoForm extends React.Component {
-    constructor() {
-        super();
-        this.state= {
-            item: ''
-        };
-    }
-
-    handleChanges = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
+  constructor() {
+    super();
+    this.state = {
+      item: "",
+      search: ""
     };
+  }
 
-    handleSubmit = e => {
-        e.preventDefault();
-        this.props.addTodo(this.state.item);
-    };
+  handleChanges = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
 
-    render() {
-        return(
-            <form onSubmit={this.handleSubmit}>
-                <input 
-                    type="text" 
-                    value={this.item} 
-                    name="item" 
-                    placeholder="Add a new chore"
-                    onChange={this.handleChanges} 
+  submitItem = e => {
+    e.preventDefault();
+    this.props.addItem(this.state.item);
+  };
+
+  submitSearch = e => {
+      e.preventDefault();
+      this.props.filterSearch(this.state.search)
+  }
+
+  render() {
+    return (
+      <div className="form-container">
+        <form onSubmit={this.submitItem}>
+          <input
+            type="text"
+            value={this.item}
+            name="item"
+            onChange={this.handleChanges}
+          />
+          <button>Add New Item</button>
+          <br />
+        </form>
+        <form className="search-form" onSubmit={this.submitSearch}>
+        <input
+                type="text"
+                value={this.search}
+                name="search"
+                onChange={this.handleChanges}
                 />
-                <button>Add Chore</button>
-            </form>
-        );
-    }
+                <button>Search</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default TodoForm;
