@@ -49,7 +49,7 @@ class App extends React.Component {
   addItem = itemName => {
     const newItem = {
       task: itemName,
-      id: (Math.floor(Math.random() * 100000)),
+      id: Date.now(),
       completed: false
     };
     this.setState({
