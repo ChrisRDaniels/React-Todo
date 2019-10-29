@@ -1,7 +1,7 @@
 .App{
-    background-color: rgb(131, 131, 131);
+    background-color: rgba(46, 46, 46, 0.452);
     height: 100vh;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     display: flex;
     flex-direction:column;
@@ -16,20 +16,24 @@ html, body{
 
 h1, h2, h3, h4, h5, h6, p, label{
     color: #070707;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1{
-    font-size: 3rem;
+    font-size: 3.5rem;
+    font-family: 'Turret Road', cursive;
 }
 
-p {
+p, li {
+    margin: 10px;
     font-size: 1.5rem;
     color: #f3f3f3;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .content{
     box-sizing: border-box;
-    width:25%;
+    width:35%;
     min-width: 500px;
     min-height: 500px;
     border: 5px solid #070707;
@@ -42,7 +46,7 @@ p {
 
 .completed{
     text-decoration: line-through;
-    color: red;
+    color: crimson;
 }
 
 .todo-list {
@@ -60,12 +64,14 @@ form{
 }
 
 button{
+    min-width: 15vw;
     padding: 5px 20px;
     margin-left: 20px;
     background-color: whitesmoke;
     color: #070707;
     border-radius: 25px;
     border: none;
+    font-family: 'Montserrat', sans-serif;
 }
 button:hover {
     background-color: #070707;  
