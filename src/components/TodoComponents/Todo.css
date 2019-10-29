@@ -25,6 +25,7 @@ h1{
 }
 
 p, li {
+    margin: 10px;
     font-size: 1.5rem;
     color: #f3f3f3;
     font-family: 'Montserrat', sans-serif;
@@ -63,6 +64,7 @@ form{
 }
 
 button{
+    min-width: 15vw;
     padding: 5px 20px;
     margin-left: 20px;
     background-color: whitesmoke;
